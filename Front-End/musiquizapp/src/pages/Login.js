@@ -17,7 +17,7 @@ function Login() {
     };
     
     function handleSubmit() {
-        fetch("http://127.0.0.1:8000/api/token/", requestOptions)
+        fetch("https://api-musiquizapp.up.railway.app/api/token/", requestOptions)
         .then((response) => {
             if (response.status === 200) {
             return response.json()
@@ -26,7 +26,7 @@ function Login() {
                 localStorage.setItem("refreshToken", data.refresh)
                 setUsername('')
                 setPassword('')
-                window.location.replace('http://localhost:3000/newgame');
+                window.location.replace('https://musiquizapp.up.railway.app/newgame');
             })
           }
           setUsername('')
