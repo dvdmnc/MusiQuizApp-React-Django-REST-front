@@ -65,7 +65,7 @@ function Game() {
     let GetData = async() => {
         try {
             singers.length = faces.length = audios.length = 0 //Clean previous singers, faces and samples
-            const response = await fetch('http://127.0.0.1:8000/api/');
+            const response = await fetch('https://api-musiquizapp.up.railway.app/api/');
             const data = await response.json();
             setData(data)
     
