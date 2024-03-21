@@ -43,8 +43,8 @@ function Login() {
     <br></br>
     <div id="login">
         <div>
-            <label htmlFor='email'>Adresse mail</label>
-            <input placeholder='Ecrivez ici' type='email' name='email' value={username} required onChange={e => setUsername(e.target.value)}/>
+            <label htmlFor='username'>Nom d'utilisateur</label>
+            <input placeholder='Ecrivez ici' type='text' name='username' value={username} required onChange={e => setUsername(e.target.value)}/>
         </div>
         <div>
         <label htmlFor='password'>Mot de passe</label>
