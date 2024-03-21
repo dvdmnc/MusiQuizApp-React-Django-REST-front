@@ -1,5 +1,5 @@
 body{
-  background-image: url("http://127.0.0.1:8000/media/images/musiquiz.png");
+  background-image: url("https://api-musiquizapp.up.railway.app/media/images/musiquiz.png");
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
