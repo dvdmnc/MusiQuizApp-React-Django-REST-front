@@ -37,7 +37,7 @@ function Timer({time, data, end, reset}) {
 
 
   return (
-    <div>Temps restant : {formatTime(seconds)} minutes.</div>
+    <div data-testid='timer'>Temps restant : {formatTime(seconds)} minutes.</div>
   )
 }
 
