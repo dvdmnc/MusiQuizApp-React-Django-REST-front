@@ -65,7 +65,7 @@ function Game() {
     let GetData = async() => {
         try {
             singers.length = faces.length = audios.length = 0 //Clean previous singers, faces and samples
-            const response = await fetch('https://api-musiquizapp.up.railway.app/api/');
+            const response = await fetch('http://127.0.0.1:8000/api/');
             const data = await response.json();
             setData(data)
     
@@ -92,6 +92,7 @@ function Game() {
                     }
                 }
                 songs_list.splice(index, 1);
+                if (songs_list.length == 0) break //Just for the tests where we emulate a data fetching from the db but less than 10 songs (to check if everything is properly displayed after fetching). So we break before the end of the loop otherwise it will add undefined values to newSongs and newAudios
             }
     
             for (let y = 0; y < newSingers.length; y++) {
@@ -201,16 +202,16 @@ function Game() {
     ))
 
     const SingersDisplay = singers.map((singer, index) => (
-        <>
+        <React.Fragment key={singer}>
         {index % 2 === 0 ?
         (<div id='namesdiv'>
-            <a className="namelink" key={index} onClick={() => {SetLink(singer)}}>{singer}</a>
+            <a className="namelink"  onClick={() => {SetLink(singer)}}>{singer}</a>
             {singers[index+1] !== undefined ?
-            (<a className="namelink" key={index+1} onClick={() => {SetLink(singers[index+1])}}>{singers[index+1]}</a>) : (null)
+            (<a className="namelink"  onClick={() => {SetLink(singers[index+1])}}>{singers[index+1]}</a>) : (null)
             }
         </div>) : (null)
         }
-        </>
+        </React.Fragment>
     ))
         
     const FacesDisplay = faces.map((face, index) => (
